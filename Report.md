@@ -158,3 +158,6 @@ These are just a few basic precautions that are usually not sufficient to preven
 A very detailed description how to prevent XSS attacks can be found [here](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html).
 
 ### Damages
+A hacker attack on hospital software would naturally have serious consequences. The database contains 
+private information of patients and hospital staff. Furthermore, the patients' appointments are also 
+managed by this software. Such data is strictly confidential and should never fall into the wrong hands.
