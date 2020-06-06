@@ -7,7 +7,7 @@ List of content:
     - No security modifications on database
     - XSS attacks
 - Damages
-
+- References
 
  ## Introduction
  The aim of this project is to show how to hack the "Hospital Management System 4.0" whit basic knowledge of:
@@ -157,7 +157,10 @@ an attacker from terminating the variable assignment and appending executable co
 These are just a few basic precautions that are usually not sufficient to prevent XSS attacks. 
 A very detailed description how to prevent XSS attacks can be found [here](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html).
 
-### Damages
+## Damages
 A hacker attack on hospital software would naturally have serious consequences. The database contains 
 private information of patients and hospital staff. Furthermore, the patients' appointments are also 
 managed by this software. Such data is strictly confidential and should never fall into the wrong hands.
+
+## References
+You can find the expoit [here](https://www.exploit-db.com/exploits/47841).
