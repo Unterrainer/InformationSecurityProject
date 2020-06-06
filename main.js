@@ -2,7 +2,7 @@ const newLine = "\n";		// Constant for printing a new line.
 
 /**
  * Main function.
- * Aks user to execute an aktion.
+ * Asks user to execute an action.
  */
 function main() {
 	readUserInput("Press enter to continue: ");
@@ -44,7 +44,7 @@ function main() {
 			process.exit(0);
 
 		default:
-			console.log("Invalid input!");
+			console.log("Invalid input!", newLine);
 			main();
 			break;
 	}
@@ -84,14 +84,14 @@ function showInitialActions() {
 		console.log(index, "=>", action, newLine);
 		index++;
 	}
-	console.log("8aD b0y", "=>", "Delete all tables of database", newLine);
+	console.log("8aD b0y", "=>", "Delete all tables of database.", newLine);
 }
 
 /**
  * Prints the "ask for input" request.
  */
 function askForInput() {
-	console.log("Please choose one of the following actions:", newLine);
+	console.log("Please choose one of the following actions: ", newLine);
 }
 
 /**
@@ -133,7 +133,7 @@ function showAdminPassword() {
 function addXSS() {
 	askForInput();
 	showXSSOutputOptions();
-	const outputFun = readUserInput("Please enter the output function you want to use");
+	const outputFun = readUserInput("Please enter the output function you want to use: ");
 	const outputMsg = readUserInput("Please enter the message you want to show or type 'cookie' if you want to see the cookies: ");
 	let msg;
 	let query;
@@ -149,7 +149,7 @@ function addXSS() {
 			executeQuery(query, true);
 		break;
 		default:
-			console.log("Please enter a valid input!");
+			console.log("Please enter a valid input!", newLine);
 			addXSS();
 			break;
 	}
