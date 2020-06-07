@@ -91,7 +91,7 @@ function askForInput() {
 }
 
 /**
- * Creates a new connection to the database.
+ * Creates a new connection pool to the database.
  */
 function getDatabaseConnection() {
 	const mysql = require('mysql');
