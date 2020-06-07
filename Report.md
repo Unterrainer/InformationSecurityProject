@@ -65,7 +65,7 @@ database which we know already from the setup.
 function getDatabaseConnection() {
 	const mysql = require('mysql');
 
-	return mysql.createConnection({
+	return mysql.createPool({
 		host: "localhost",
 		user: "root",
 		password: "",
@@ -83,18 +83,15 @@ An example for a query could be:
 ``` JavaScript
 function executeQuery(sql, open = false) {
 	const con = getDatabaseConnection();
-	con.connect(function (err) {
+	con.query(sql, function (err, result) {
 		if (err) console.log("There went somthing wrong! Please try again!", newLine);
-		con.query(sql, function (err, result) {
-			if (err) console.log("There went somthing wrong! Please try again!", newLine);
-			if (open) {
-				var opn = require('opn');
-				opn('http://localhost/hospital/hms/admin/doctor-specilization.php');
-			}
-			else
-				console.log(result)
-			main();
-		});
+		if (open) {
+			var opn = require('opn');
+			opn('http://localhost/hospital/hms/admin/doctor-specilization.php');
+		}
+		else
+			console.log(result)
+		main();
 	});
 }
 ```
