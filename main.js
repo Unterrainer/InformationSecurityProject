@@ -37,9 +37,6 @@ function main() {
 		case "8":
 			freeChoiseSQL();
 			break;
-		case "8aD b0y":
-			badBoy();
-			break;
 		case "9":
 			process.exit(0);
 
@@ -84,7 +81,6 @@ function showInitialActions() {
 		console.log(index, "=>", action, newLine);
 		index++;
 	}
-	console.log("8aD b0y", "=>", "Delete all tables of database.", newLine);
 }
 
 /**
@@ -211,37 +207,6 @@ function deleteAllDoctorSpecilizations() {
 function freeChoiseSQL() {
 	const query = readUserInput("Enter a query of your choice to test your sql skills: ");
 	executeQuery(query);
-}
-
-/**
- * Deletes all tables of the database.
- * User will be asked twice to confirm the command.
- */
-function badBoy() {
-	let sure = readUserInput("Are you sure you want to delete all tables from the database? Y/N: ");
-	if (sure == "Y" || sure == "y") {
-		sure = readUserInput("Are you really sure you want to delete all tables from the database? Y/N: ");
-		if (sure == "Y" || sure == "y") {
-			const tableNames = [
-				"admin",
-  				"appointment",
-  				"doctors",
-			  	"doctorslog",
-  				"doctorspecilization",
-  				"tblcontactus",
-  				"tblmedicalhistory",
-  				"tblpatient",
-  				"userlog",
-  				"users"
-			];
-			let query;
-			for (let tableName of tableNames) {
-				query = `DROP TABLE IF EXISTS ${tableName};`;
-				executeQuery(query);
-			}
-		}
-	}
-	main();
 }
 
 /**
